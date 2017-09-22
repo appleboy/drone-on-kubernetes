@@ -22,9 +22,17 @@ spec:
           requests:
             cpu: 100m
             memory: 64Mi
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3000
+          initialDelaySeconds: 3
+          periodSeconds: 3
         env:
         - name: DRONE_SERVER
           value: drone-service:9000
+        - name: DRONE_HEALTHCHECK
+          value: "true"
         - name: DRONE_SECRET
           valueFrom:
             secretKeyRef:
