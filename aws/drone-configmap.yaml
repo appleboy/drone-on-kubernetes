@@ -12,9 +12,9 @@ data:
   # server host name
   server.host: drone.example.com
   # start the server in debug mode
-  server.debug: true
+  server.debug: "true"
   # open user registration
-  server.open: true
+  server.open: "true"
   # database driver, defaul as sqlite3
   server.database.driver: sqlite3
   # database driver configuration string
@@ -23,7 +23,7 @@ data:
   server.admin: admin
 
   # remote parameters (GitHub)
-  server.remote.github: true
+  server.remote.github: "true"
   server.remote.github.client: xxxxx
   server.remote.github.secret: xxxxx
 
@@ -31,4 +31,4 @@ data:
   # Drone Agent Config #
   ######################
 
-  agent.debug: true
+  agent.debug: "true"

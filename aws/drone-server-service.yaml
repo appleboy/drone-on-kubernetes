@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: drone-service
+  namespace: drone
+spec:
+  type: LoadBalancer
+  # type: NodePort
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8000
+  - name: grpc
+    protocol: TCP
+    port: 9000
+    targetPort: 9000
+  selector:
+    app: drone-server
