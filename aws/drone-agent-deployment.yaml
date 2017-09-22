@@ -33,6 +33,9 @@ spec:
           value: drone-service:9000
         - name: DRONE_HEALTHCHECK
           value: "true"
+        # issue: https://github.com/drone/drone/issues/2048
+        - name: DOCKER_API_VERSION
+          value: "1.24"
         - name: DRONE_SECRET
           valueFrom:
             secretKeyRef:
