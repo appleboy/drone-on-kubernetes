@@ -79,7 +79,7 @@ spec:
             # NOTE: This needs to be pointed at a volume in the same AZ.
             # You need not format it beforehand, but it must already exist.
             # CHANGEME: Substitute your own EBS volume ID here.
-            volumeID: vol-01f13b969e9dabff7
+            volumeID: vol-xxxxxxxxxxxxxxxxx
         - name: docker-socket
           hostPath:
             path: /var/run/docker.sock

@@ -40,8 +40,8 @@ open the `drone-server-deployment.yaml` file
     # NOTE: This needs to be pointed at a volume in the same AZ.
     # You need not format it beforehand, but it must already exist.
     # CHANGEME: Substitute your own EBS volume ID here.
--   volumeID: vol-01f13b969e9dabff7
-+   volumeID: vol-0f06ce3889f64cbc0
+-   volumeID: vol-xxxxxxxxxxxxxxxxx
++   volumeID: vol-01f13b969e9dabff7
 ```
 
 ### Create drone in AWS
@@ -79,3 +79,5 @@ $ kubectl create -f drone-server-deploymeny.yaml
 $ kubectl create -f drone-server-service.yaml
 $ kubectl create -f drone-agent-deployment.yaml
 ```
+
+See the 
