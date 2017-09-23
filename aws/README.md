@@ -63,7 +63,7 @@ MWYyZDFlMmU2N2Rm
 
 Update drone host and GitHub client and secret key in `drone-configmap.yaml`
 
-```
+```yaml
 server.host: drone.example.com
 server.remote.github.client: xxxxx
 server.remote.github.secret: xxxxx
