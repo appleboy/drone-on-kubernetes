@@ -54,7 +54,7 @@ data:
 +  server.secret: MWYyZDFlMmU2N2Rm
 ```
 
-Creating a Secret Manually
+Creating a Secret Manually. For example: `1f2d1e2e67df` as server secret key
 
 ```sh
 $ echo -n "1f2d1e2e67df" | base64
