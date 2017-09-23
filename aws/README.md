@@ -75,9 +75,22 @@ create drone via the following commands.
 $ kubectl create -f drone-namespace.yaml
 $ kubectl create -f drone-secret.yaml
 $ kubectl create -f drone-configmap.yaml
-$ kubectl create -f drone-server-deploymeny.yaml
+$ kubectl create -f drone-server-deployment.yaml
 $ kubectl create -f drone-server-service.yaml
 $ kubectl create -f drone-agent-deployment.yaml
 ```
 
-See the 
+See the aws LoadBalancer information via the following script:
+
+```sh
+$ kubectl --namespace=drone get service -o wide
+```
+
+result:
+
+```
+NAME            CLUSTER-IP      EXTERNAL-IP
+drone-service   100.68.89.117   xxxxxxxxx.ap-southeast-1.elb.amazonaws.com
+```
+
+Finally, update the `Homepage URL` and `Authorization callback URL` in `application` of GitHub page.
