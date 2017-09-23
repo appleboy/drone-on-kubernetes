@@ -96,3 +96,9 @@ drone-service   100.68.89.117   xxxxxxxxx.ap-southeast-1.elb.amazonaws.com
 Finally, update the `Homepage URL` and `Authorization callback URL` in `application` of GitHub page.
 
 ![application of GitHub page](./images/image01.png)
+
+### Clean up all drone application
+
+```sh
+$ kubectl delete -f drone-namespace.yaml
+```
