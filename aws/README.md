@@ -94,3 +94,5 @@ drone-service   100.68.89.117   xxxxxxxxx.ap-southeast-1.elb.amazonaws.com
 ```
 
 Finally, update the `Homepage URL` and `Authorization callback URL` in `application` of GitHub page.
+
+[github]: images/image01.png  "application of GitHub page"
