@@ -34,7 +34,6 @@ Once you have created your volume, look its Volume ID in the Console/CLI. It sho
 open the `drone-server-deployment.yaml` file
 
 ```diff
-- name: drone-server-sqlite-db
   awsElasticBlockStore:
     fsType: ext4
     # NOTE: This needs to be pointed at a volume in the same AZ.
