@@ -49,7 +49,7 @@ Change the secret key which comunicate between drone server and agent. Open the 
 
 ```diff
 data:
--  server.secret: ZHJvbmUtdGVzdC1kZW1v
+-  server.secret: REPLACE-THIS-WITH-BASE64-ENCODED-VALUE
 +  server.secret: MWYyZDFlMmU2N2Rm
 ```
 
