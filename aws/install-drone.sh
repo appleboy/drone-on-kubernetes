@@ -25,7 +25,7 @@ kubectl create -f drone-namespace.yaml 2> /dev/null
 
 echo "Randomly generating secrets and uploading..."
 if [ "$kernel_name" == "Darwin" ]; then
-  drone_token=`openssl rand -base64 8 |md5 |head -c8;echo`
+  drone_token=`openssl rand -base64 8 | md5 | head -c8; echo`
 else
   drone_token=`cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 fi
