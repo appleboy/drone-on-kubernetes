@@ -41,6 +41,16 @@ spec:
             configMapKeyRef:
               name: drone-config
               key: server.open
+        - name: DRONE_DATABASE_DRIVER
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.database.driver
+        - name: DRONE_DATABASE_DATASOURCE
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.database.datasource
         - name: DRONE_SECRET
           valueFrom:
             secretKeyRef:
@@ -66,6 +76,21 @@ spec:
             configMapKeyRef:
               name: drone-config
               key: server.remote.github.secret
+        - name: DRONE_GITEA
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.remote.gitea
+        - name: DRONE_GITEA_URL
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.remote.gitea.url
+        - name: DRONE_GITEA_SKIP_VERIFY
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.remote.gitea.skip.verify
         - name: DRONE_DEBUG
           valueFrom:
             configMapKeyRef:
