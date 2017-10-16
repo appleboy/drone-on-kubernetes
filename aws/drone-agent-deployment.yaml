@@ -41,6 +41,11 @@ spec:
             secretKeyRef:
               name: drone-secrets
               key: server.secret
+        - name: DRONE_MAX_PROCS
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: agent.max.procs
         - name: DRONE_DEBUG
           valueFrom:
             configMapKeyRef:

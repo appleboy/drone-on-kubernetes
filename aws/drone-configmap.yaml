@@ -32,3 +32,4 @@ data:
   ######################
 
   agent.debug: "true"
+  agent.max.procs: 1
