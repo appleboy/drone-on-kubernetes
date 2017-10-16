@@ -16,8 +16,8 @@ spec:
         name: drone-agent
         volumeMounts:
           # Enables Docker in Docker
-          - mountPath: /var/run/docker.sock
-            name: docker-socket
+          - name: docker-socket
+            mountPath: /var/run/docker.sock
         resources:
           requests:
             cpu: 100m

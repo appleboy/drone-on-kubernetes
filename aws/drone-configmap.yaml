@@ -20,16 +20,21 @@ data:
   # database driver configuration string
   server.database.datasource: drone.sqlite
   # list of admin users
-  server.admin: admin
+  server.admin: appleboy
 
   # remote parameters (GitHub)
   server.remote.github: "true"
   server.remote.github.client: xxxxx
   server.remote.github.secret: xxxxx
 
+  # remote parameters (Gitea)
+  server.remote.gitea: "false"
+  server.remote.gitea.url: "https://try.gitea.io"
+  server.remote.gitea.skip.verify: "true"
+
   ######################
   # Drone Agent Config #
   ######################
 
   agent.debug: "true"
-  agent.max.procs: 1
+  agent.max.procs: "1"

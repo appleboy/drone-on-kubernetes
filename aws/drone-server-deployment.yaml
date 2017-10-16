@@ -21,11 +21,11 @@ spec:
           protocol: TCP
         volumeMounts:
           # Persist our configs in an SQLite DB in here
-          - mountPath: /var/lib/drone
-            name: drone-server-sqlite-db
+          - name: drone-server-sqlite-db
+            mountPath: /var/lib/drone
           # Enables Docker in Docker
-          - mountPath: /var/run/docker.sock
-            name: docker-socket
+          - name: docker-socket
+            mountPath: /var/run/docker.sock
         resources:
           requests:
             cpu: 40m
