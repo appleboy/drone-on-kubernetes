@@ -31,8 +31,6 @@ spec:
         env:
         - name: DRONE_SERVER
           value: drone-service:9000
-        - name: DRONE_HEALTHCHECK
-          value: "true"
         # issue: https://github.com/drone/drone/issues/2048
         - name: DOCKER_API_VERSION
           value: "1.24"
