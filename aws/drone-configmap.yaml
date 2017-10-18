@@ -37,4 +37,6 @@ data:
   ######################
 
   agent.debug: "true"
+  agent.debug.pretty: "true"
   agent.max.procs: "1"
+  agent.healthcheck: "false"

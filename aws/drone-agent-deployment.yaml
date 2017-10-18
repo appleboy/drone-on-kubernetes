@@ -51,6 +51,16 @@ spec:
             configMapKeyRef:
               name: drone-config
               key: agent.debug
+        - name: DRONE_DEBUG_PRETTY
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: agent.debug.pretty
+        - name: DRONE_HEALTHCHECK
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: agent.healthcheck
 
       volumes:
         - name: docker-socket
