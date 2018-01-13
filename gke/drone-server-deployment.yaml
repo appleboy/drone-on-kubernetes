@@ -1,0 +1,107 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: drone-server
+  namespace: drone
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: drone-server
+    spec:
+      containers:
+      - image: drone/drone:0.8
+        imagePullPolicy: Always
+        name: drone-server
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+        - containerPort: 9000
+          protocol: TCP
+        volumeMounts:
+          # Persist our configs in an SQLite DB in here
+          - name: drone-server-sqlite-db
+            mountPath: /var/lib/drone
+          # Enables Docker in Docker
+          - name: docker-socket
+            mountPath: /var/run/docker.sock
+        resources:
+          requests:
+            cpu: 40m
+            memory: 32Mi
+        env:
+        - name: DRONE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.host
+        - name: DRONE_OPEN
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.open
+        - name: DRONE_DATABASE_DRIVER
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.database.driver
+        - name: DRONE_DATABASE_DATASOURCE
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.database.datasource
+        - name: DRONE_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: drone-secrets
+              key: server.secret
+        - name: DRONE_ADMIN
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.admin
+        - name: DRONE_GITHUB
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.remote.github
+        - name: DRONE_GITHUB_CLIENT
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.remote.github.client
+        - name: DRONE_GITHUB_SECRET
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.remote.github.secret
+        - name: DRONE_GITEA
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.remote.gitea
+        - name: DRONE_GITEA_URL
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.remote.gitea.url
+        - name: DRONE_GITEA_SKIP_VERIFY
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.remote.gitea.skip.verify
+        - name: DRONE_DEBUG
+          valueFrom:
+            configMapKeyRef:
+              name: drone-config
+              key: server.debug
+
+      volumes:
+        - name: drone-server-sqlite-db
+          gcePersistentDisk:
+            pdName:  drone-server-sqlite-db
+            fsType: ext4
+        - name: docker-socket
+          hostPath:
+            path: /var/run/docker.sock
