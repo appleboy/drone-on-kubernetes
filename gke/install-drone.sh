@@ -14,7 +14,7 @@ if [ $? -eq 1 ]
 then
   echo "Before continuing, you should have followed the prep work outlined" \
        "in the README.md file in this directory. You should have an existing" \
-       "Kubernetes cluster and an EBS volume in the same AZ. You should have" \
+       "Kubernetes cluster and persistent disks in the same zone. You should have" \
        "also edited drone-configmap.yaml and drone-server-deployment.yaml as directed."
   echo
   read -p "<Press enter once you've made your edits>"
@@ -39,11 +39,11 @@ kubectl create -f drone-server-service.yaml 2> /dev/null
 if [ $? -eq 0 ]
 then
   echo "Since this is your first time running this script, we have created a" \
-       "front-facing Load Balancer (ELB). You'll need to wait" \
+       "front-facing Load Balancer. You'll need to wait" \
        "for the LB to initialize and be assigned a hostname. We'll pause for a" \
        "bit and walk you through this after the break."
   while true; do
-    echo "Waiting for 40 seconds for ELB hostname assignment..."
+    echo "Waiting for 40 seconds for hostname assignment..."
     sleep 40
     echo "[[ Querying your drone-server service to see if it has a hostname yet... ]]"
     echo

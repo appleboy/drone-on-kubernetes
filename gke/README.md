@@ -23,3 +23,25 @@ By default, these manifests will store all Drone state on a Google Cloud persist
 You can either do this in the GCP web console or via the `gcloud` command. In the case of the latter, you can use our `create-disk.sh` script after you open it up and verify that the options make sense for you.
 
 In either case, make sure the persistent disk is named `drone-server-sqlite-db`. Also make sure that it is in the same availability zone as the GKE cluster.
+
+## Installation
+
+Create Kubernetes Engine Cluster and persistent disk
+
+```sh
+# Create Kubernetes Engine Cluster
+./create-gke-cluster.sh
+# Create persistent disk
+./create-disk.sh
+```
+
+## Remove Cluster
+
+Remove kubernetes cluster and persistent disk
+
+```sh
+# Remove Kubernetes Engine Cluster
+./remove-gke-cluster.sh
+# Remove persistent disk
+./remove-disk.sh
+```
