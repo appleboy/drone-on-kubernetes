@@ -11,7 +11,7 @@ spec:
         app: drone-server
     spec:
       containers:
-      - image: drone/drone:0.8
+      - image: drone/drone:latest
         imagePullPolicy: Always
         name: drone-server
         ports:

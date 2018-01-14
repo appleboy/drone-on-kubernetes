@@ -31,6 +31,11 @@ Create Kubernetes Engine Cluster and persistent disk
 ```sh
 # Create Kubernetes Engine Cluster
 ./create-gke-cluster.sh
+```
+
+![cluster](./images/cluster.png)
+
+```sh
 # Create persistent disk
 ./create-disk.sh
 ```

@@ -40,3 +40,5 @@ data:
   agent.debug.pretty: "true"
   agent.max.procs: "1"
   agent.healthcheck: "true"
+  agent.keepalive.time: "1s"
+  agent.keepalive.timeout: "5s"
