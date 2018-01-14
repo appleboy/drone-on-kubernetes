@@ -1,6 +1,6 @@
 # Drone on Kubernetes
 
-![logo](./images/logo.png)
+![logo](./images/k8s.png)
 
 This repository contains example Kubernetes manifests for [Drone][1]. Each subdirectory offers a different environment and set of configurations:
 
