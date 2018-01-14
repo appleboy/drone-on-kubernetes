@@ -35,6 +35,12 @@ Create Kubernetes Engine Cluster and persistent disk
 ./create-disk.sh
 ```
 
+Install drone in Kubernetes Engine Cluster
+
+```sh
+./install-drone.sh
+```
+
 ## Remove Cluster
 
 Remove kubernetes cluster and persistent disk
