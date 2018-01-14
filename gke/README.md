@@ -35,6 +35,8 @@ Create Kubernetes Engine Cluster and persistent disk
 ./create-disk.sh
 ```
 
+![Kubernetes Engine](./images/gke.png)
+
 Install drone in Kubernetes Engine Cluster
 
 ```sh
